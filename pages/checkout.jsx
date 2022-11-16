@@ -30,34 +30,36 @@ export default function Checkout() {
 
       <div className={styles.left}>
         {
-          user.products.length > 0 ? user.products.map((x, idx) => <Checkout_Item_list key={idx} food={x} />) : <h2 style={{color:'white'}}>No products in Cart</h2>
+          user.products.length > 0 ? user.products.map((x, idx) => <Checkout_Item_list key={idx} food={x} />) : <h2 style={{ color: 'white' }}>No products in Cart</h2>
         }
 
 
 
       </div>
       <div className={styles.right}>
-        <h2>Grand Total</h2>
+        <h2 className='text-2xl mt-2'>Grand Total</h2>
 
-        <div className={styles.details}>
-          <div className={styles.div}>
-            <p className={styles.key}> Subtotal</p>
-            <p>${Grandtotal}</p>
-          </div>
-          <div className={styles.div}>
-            <p className={styles.key}> Discount</p>
-            <p> ${0}</p>
-          </div>
-
-
-
-          <div className={styles.div}>
-            <p className={styles.total}> Total</p>
+        <div className={'flex flex-col items-center justify-center h-48'}>
+         
+          <div className='flex justify-between w-5/12'>
+            <p className='font-bold'> Subtotal</p>
             <p>${Grandtotal}</p>
           </div>
 
+          <div className={'flex justify-between w-5/12'}>
+            <p className={'font-bold'}> Discount</p>
+            <p> ${'0.0'}</p>
+          </div>
 
-          <input className={styles.proceed} type="button" value="Proceed" onClick={() => setcardPayment(true)}   />
+
+
+          <div className={'flex justify-between w-5/12 mb-5'}>
+            <p className={'font-bold'}> Total</p>
+            <p>${Grandtotal}</p>
+          </div>
+
+
+          <input className={styles.proceed } type="button" value="Proceed" onClick={() => setcardPayment(true)} />
           {/* disabled={user.products.length > 0 ?false:true} */}
 
           {

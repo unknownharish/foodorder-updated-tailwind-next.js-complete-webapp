@@ -102,14 +102,15 @@ export default function Fooddisplay(props) {
                         src={productdesc.image}
                         height={500}
                         width={500}
+                        className='rounded-full'
                     />
 
                 </div>
                 <div className={styles.right}>
 
-                    <h2>{productdesc.name}</h2>
+                    <h2 className='text-xl'>{productdesc.name}</h2>
                     <div className={styles.innerdetails}>
-                        <p className={styles.price}>${price.price * qty}</p>
+                        <p className={styles.price }>${price.price * qty}</p>
 
 
                         <p>{productdesc.desc}</p>
@@ -129,7 +130,7 @@ export default function Fooddisplay(props) {
 
 
                     <div>
-                        <input className={styles.quantity} type="number" min={1} id="" value={qty} onChange={(e) => setqty(e.target.value)} />
+                        <input className={styles.quantity + ' rounded p-2'} type="number" min={1} id="" max={15} value={qty} onChange={(e) => setqty(e.target.value)} />
                     </div>
 
 
@@ -140,7 +141,7 @@ export default function Fooddisplay(props) {
 
 
                             return <>
-                                <input className={styles.checkbox} type="checkbox" name="" id={extra.text} value={extra.price} onClick={e => addMorePrice(e)} />
+                                <input className={styles.checkbox } type="checkbox" name="" id={extra.text} value={extra.price} onClick={e => addMorePrice(e)} />
                                 <label htmlFor={extra.text}> {extra.text}</label>
                             </>
                         })}

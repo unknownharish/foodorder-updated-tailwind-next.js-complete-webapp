@@ -51,7 +51,7 @@ export default function Caresoul() {
 
                         <div className={styles.image}>
 
-                            <Image className={styles.singleImage} key={key} src={img} layout='fill' objectFit='cover' />
+                            <Image className={styles.singleImage } key={key} src={img} layout='fill' objectFit='cover' />
                         </div>
                     </>
                 })}

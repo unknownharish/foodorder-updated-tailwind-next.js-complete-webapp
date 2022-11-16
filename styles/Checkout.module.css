@@ -43,6 +43,7 @@
     background-image: url("../public/img/background2.jpeg");
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 1;
 }
 
 .left {
@@ -54,7 +55,7 @@
 .right {
     /* background-color: rgb(99, 88, 73); */
     background-color: #c8c87f;
-    height: 45vh;
+    height: 35vh;
     min-width: 20%;
     margin: 5vh;
     color: black;
@@ -128,7 +129,7 @@
 
     .right {
        
-        height: 45vh;
+        height: 30vh;
         width: 47%;
     }
 
@@ -146,6 +147,6 @@
 
     .right {
         flex: 0.5;
-        height: 45vh;
+        height: 25vh;
     }
 }

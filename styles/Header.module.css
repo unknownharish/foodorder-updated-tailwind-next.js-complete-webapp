@@ -144,12 +144,17 @@
 
             color: white;
             font-weight: bold;
+            overflow-y: crop;
         }
-
+        
         .list {
-            position: absolute;
+            color: white;
+            /* position: absolute;
             top: 12vh;
-            left: -5vw;
+            left: 5vw; */
+            /* z-index: 0; */
+            margin-top: 10vh;
+            margin-left: -21vh;
         }
 
         .listItem {

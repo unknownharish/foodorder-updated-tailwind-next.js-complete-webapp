@@ -26,9 +26,12 @@ export default function Header() {
 
 
 
-
+    const liststyle = {
+        transform: !headerht ?'translateX(-27vh)':'translateX(0vh)'
+    }
     return (
-        <div className={styles.header} id='header'>
+        // <div className={styles.header} id='header'>
+        <div className='bg-black flex justify-around items-center h-28 ease-linear duration-300' id='header'>
 
 
 
@@ -46,7 +49,7 @@ export default function Header() {
             </div>
 
 
-            <div className={styles.downlist} id='downlist'>
+            <div style={liststyle} className={styles.downlist } id='downlist'>
                 <ul className={styles.list}>
                     <li className={styles.listItem}> <Link href={'/'}>Home</Link></li>
                     <li className={styles.listItem}><Link href={'/about'}>About</Link></li>

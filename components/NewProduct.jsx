@@ -49,7 +49,7 @@ export default function NewProduct({ setnewProductScreen }) {
 
     let Imagedata = (url) => {
         setImage_url(url);
-        console.log(url)
+        console.log(url) 
     }
 
 
@@ -66,7 +66,7 @@ export default function NewProduct({ setnewProductScreen }) {
             dispatch(setLoading({ value: true }))
 
             let { data } = await axios.post('https://api.cloudinary.com/v1_1/din5l0kjn/image/upload', form)
-            let URL = data.url;
+            let URL = data.secure_url;
 
             let finalPass = {
                 name,
@@ -75,7 +75,7 @@ export default function NewProduct({ setnewProductScreen }) {
                 price: [Small, Medium, Large],
                 extras: finalExtras
             }
-            let Product = await axios.post('http://localhost:3000/api/product', finalPass)
+            let Product = await axios.post('/api/product', finalPass)
 
             if (!Product.error) {
                 setname('');
@@ -106,7 +106,7 @@ export default function NewProduct({ setnewProductScreen }) {
     }
     return (
         <div className={styles.NewProduct}>
-            <h3 style={{ textAlign: 'center' }}>Add New Product</h3>
+            <h3 className='text-center text-2xl my-2'>Add New Product</h3>
 
             <div className={styles.cross} onClick={() => { changeVisibility() }}>
                 <Image src={'/img/x.svg'} height={50} width={50} />
@@ -115,24 +115,24 @@ export default function NewProduct({ setnewProductScreen }) {
 
             <div className={styles.userdetails + ' ' + 'my-3  center-col'} >
 
-                <div >
-                    <input className={styles.input} type="text" placeholder="Product Name" required maxLength={20} value={name} onChange={(e) => setname(e.target.value)} />
+                <div className='w-full flex justify-center'>
+                    <input className='p-2 rounded-md w-7/12' type="text" placeholder="Product Name" required maxLength={20} value={name} onChange={(e) => setname(e.target.value)} />
                 </div>
-                <div >
-                    <textarea className={styles.textarea + ' ' + 'my-1'} placeholder="Description " id="" cols="30" rows="10" maxLength={200} required value={Description} onChange={(e) => setDescription(e.target.value)} />
+                <div className='w-full flex justify-center'>
+                    <textarea className='p-2 rounded-md w-7/12 h-10 my-1' placeholder="Description " id="" cols="30" rows="10" maxLength={200} required value={Description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
-                <div >
+                <div className='w-full flex justify-center my-1'>
                     <div>  <span>Select image</span> </div>
                     <input type="file" name="Image" onChange={(e) => Imagedata(e.target.files[0])} />
                 </div>
-                <div >
-                    <input className={styles.input + ' ' + 'my-1'} type="text" maxLength={2} placeholder="Small eg: $5" required value={Small} onChange={(e) => setSmall(e.target.value)} />
+                <div className='w-full flex justify-center'>
+                    <input className='p-2 rounded-md w-7/12 h-10 my-1' type="text" maxLength={2} placeholder="Small eg: $5" required value={Small} onChange={(e) => setSmall(e.target.value)} />
                 </div>
-                <div >
-                    <input className={styles.input + ' ' + 'my-1'} type="text" maxLength={2} placeholder="Medium eg: $5" required value={Medium} onChange={(e) => setMedium(e.target.value)} />
+                <div className='w-full flex justify-center'>
+                    <input className='p-2 rounded-md w-7/12 h-10 my-1' type="text" maxLength={2} placeholder="Medium eg: $5" required value={Medium} onChange={(e) => setMedium(e.target.value)} />
                 </div>
-                <div >
-                    <input className={styles.input + ' ' + 'my-1'} type="text" maxLength={3} placeholder="Large eg: $5" required value={Large} onChange={(e) => setLarge(e.target.value)} />
+                <div className='w-full flex justify-center'>
+                    <input className='p-2 rounded-md w-7/12 h-10 my-1' type="text" maxLength={3} placeholder="Large eg: $5" required value={Large} onChange={(e) => setLarge(e.target.value)} />
                 </div>
 
 

@@ -7,7 +7,7 @@ export default function FoodItems({ foodlist }) {
     return (
 
         <>
-            <h2>Foods we Offer ..!</h2>
+            <h2 className='text-2xl'>Foods we Offer ..!</h2>
             <div className={styles.fooditems}>
                
                

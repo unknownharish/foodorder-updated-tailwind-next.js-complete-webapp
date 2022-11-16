@@ -32,7 +32,7 @@ export default function Admin({ totalProducts, totalOrders }) {
     async function changeStatus(id) {
 
 
-        console.log(id)
+        // console.log(id)
 
         let ORDER = Orders.filter(x => x._id == id)
         let newStatus = ((parseInt(ORDER['0'].status) + 1) % 4)
@@ -93,11 +93,11 @@ export default function Admin({ totalProducts, totalOrders }) {
                             }
                             return (
                                 <div key={idx} className={styles.singleProductRender}>
-                                    <Image loader={myLoader} src={x.img} height={20} width={40} />
+                                    <Image loader={myLoader} src={x.img} height={20} width={40} className='rounded-full' />
                                     <p>{x.name.slice(0, 5) + '..'}</p>
 
-                                    <input type="button" className={styles.editButton} title='Update details' value="Update" />
-                                    <input type="button" className={styles.viewButton} title='delete this product' value="Delete" />
+                                    <input type="button" className='border p-2 bg-blue-300 rounded-lg cursor-pointer border-blue-400 hover:bg-blue-500' title='Update details' value="Update" />
+                                    <input type="button" className='bg-red-500 hover:bg-red-400 border border-red-400 p-2 cursor-pointer rounded-lg' title='delete this product' value="Delete" />
 
                                 </div>)
 

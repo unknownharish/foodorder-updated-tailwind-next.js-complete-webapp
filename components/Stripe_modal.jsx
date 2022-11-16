@@ -206,30 +206,30 @@ export default function Stripe_modal({ setcardPayment }) {
 
         <div className={styles.stripe}>
 
-            <h2>User Details</h2>
+            <h2 className='my-2 text-2xl '>Enter Details to Continue...</h2>
             <div className={styles.cross} onClick={() => { changeVisibility() }}>
                 <Image src={'/img/x.svg'} height={50} width={50} />
             </div>
 
-            <div className={styles.userdetails + ' ' + 'my-3  center-col'} >
+            <div className={styles.userdetails + ' ' + 'my-3  center-col overflow-clip'} >
 
-                <div >
-                    <input className={styles.input} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
+                <div className='w-full flex justify-center' >
+                    <input className={'p-2 rounded-md w-8/12 outline-none'} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
                 </div>
-                <div >
-                    <textarea className={styles.textarea + ' ' + 'my-1'} placeholder="Address" id="" cols="30" rows="10" minLength={20} required value={address} onChange={(e) => setaddress(e.target.value)} />
+                <div className='w-full flex justify-center' >
+                    <textarea className={'p-2 rounded-md w-8/12 h-10 my-1 outline-none'} placeholder="Address" id="" cols="30" rows="10" minLength={20} required value={address} onChange={(e) => setaddress(e.target.value)} />
                 </div>
-                <div >
-                    <input className={styles.input} type="text" placeholder="City" required value={city} onChange={(e) => setcity(e.target.value)} />
+                <div className='w-full flex justify-center' >
+                    <input className={'p-2 rounded-md w-8/12 h-10 my-1 outline-none'} type="text" placeholder="City" required value={city} onChange={(e) => setcity(e.target.value)} />
                 </div>
-                <div >
-                    <input className={styles.input + ' ' + 'my-1'} type="text" placeholder="Postal code  eg: 110044" maxLength={6} required value={postalcode} onChange={(e) => setpostalcode(e.target.value)} />
+                <div className='w-full flex justify-center' >
+                    <input className={'p-2 rounded-md w-8/12 h-10 my-1 outline-none'} type="text" placeholder="Postal code  eg: 110044" maxLength={6} required value={postalcode} onChange={(e) => setpostalcode(e.target.value)} />
                 </div>
-                <div >
-                    <input className={styles.input + ' ' + 'my-1'} type="text" placeholder="State" required value={state} onChange={(e) => setstate(e.target.value)} />
+                <div className='w-full flex justify-center' >
+                    <input className={'p-2 rounded-md w-8/12 h-10 my-1 outline-none'} type="text" placeholder="State" required value={state} onChange={(e) => setstate(e.target.value)} />
                 </div>
-                <div >
-                    <input className={styles.input} type="text" placeholder="Country" required value={country} onChange={(e) => setcountry(e.target.value)} />
+                <div className='w-full flex justify-center' >
+                    <input className={'p-2 rounded-md w-8/12 h-10 my-1 outline-none'} type="text" placeholder="Country" required value={country} onChange={(e) => setcountry(e.target.value)} />
                 </div>
 
 

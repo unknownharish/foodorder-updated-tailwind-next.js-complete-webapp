@@ -33,10 +33,10 @@
 
 @media (min-width:320px) and (max-width:500px) {
     .parent{
-        font-size: 10px;
+        font-size: 10px !important;
     }
     .message{
-        font-size: 20px;
+        font-size: 20px !important;
     }
     
     
@@ -45,11 +45,11 @@
 @media (min-width:500px) and (max-width:900px) {
     
     .parent{
-        font-size: 15px;
+        font-size: 15px ;
     }
     
     .message{
-        font-size: 20px;
+        font-size: 20px !important;
     }
 
 }
