@@ -13,6 +13,7 @@
     padding: 10vh 1vw;
 }
 
+
 .status {
     margin: 15vh 2vw;
     height: 20vh;
@@ -96,7 +97,7 @@
     /* background-color: rgb(99, 88, 73); */
     flex: 1;
     background-color: #bbbb6f;
-    height: 44vh;
+    height: 30vh;
     min-width: 20%;
     margin: 5vh;
     color: black;

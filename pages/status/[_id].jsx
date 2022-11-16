@@ -151,27 +151,28 @@ export default function Status({ data }) {
 
 
       </div>
-      {/* <div className={styles.mid}>
+      {/* <div className={styles.mid}> 
         <h4>Total</h4>
         <p className={styles.amount}>${data.data.total}</p>
       </div> */}
       <div className={styles.right}>
-        <h2>Grand Total</h2>
+        <h2 className='text-xl'>Grand Total</h2>
 
-        <div className={styles.details}>
-          <div className={styles.div}>
-            <p className={styles.key}> Subtotal</p>
+        <div className={'flex flex-col items-center justify-center h-48'}>
+          <div className='flex justify-between w-5/12'>
+            <p className='font-bold'> Subtotal</p>
             <p>${data.data.total}</p>
           </div>
-          <div className={styles.div}>
-            <p className={styles.key}> Discount</p>
-            <p> ${0}</p>
+
+          <div className={'flex justify-between w-5/12'}>
+            <p className={'font-bold'}> Discount</p>
+            <p> ${'0.0'}</p>
           </div>
 
 
 
-          <div className={styles.div}>
-            <p className={styles.total}> Total</p>
+          <div className={'flex justify-between w-5/12 mb-5'}>
+            <p className={'font-bold'}> Total</p>
             <p>${data.data.total}</p>
           </div>
 
