@@ -37,7 +37,7 @@ export default function Admin({ totalProducts, totalOrders }) {
         let ORDER = Orders.filter(x => x._id == id)
         let newStatus = ((parseInt(ORDER['0'].status) + 1) % 4)
 
-        let { data } = await axios.put(`http://localhost:3000/api/order/${id}`, {
+        let { data } = await axios.put(`https://myfoodorder.vercel.app/api/order/${id}`, {
             status: newStatus
         })
         // console.log('response', data)
@@ -57,7 +57,7 @@ export default function Admin({ totalProducts, totalOrders }) {
 
         confirm('sure want to delete')
 
-        let { data } = await axios.delete(`http://localhost:3000/api/order`, {
+        let { data } = await axios.delete(`https://myfoodorder.vercel.app/api/order`, {
 
             data: { '_id': id }
 
@@ -151,15 +151,15 @@ export async function getServerSideProps(context) {
     if (process.env.secret != cookies.token) {
         return {
             redirect: {
-                destination: '/login',
+                destination: '/login', 
                 permanent: true
             }
         }
     }
 
 
-    let totalProducts = await axios.get('http://localhost:3000/api/product');
-    let totalOrders = await axios.get('http://localhost:3000/api/order')
+    let totalProducts = await axios.get('https://myfoodorder.vercel.app/api/product');
+    let totalOrders = await axios.get('https://myfoodorder.vercel.app/api/order')
     // console.log(totalOrders.data);
     return {
         props: {
